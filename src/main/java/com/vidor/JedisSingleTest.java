@@ -23,6 +23,7 @@ public class JedisSingleTest {
         try {
             jedis = jedisPool.getResource();
             jedis.set("hello_singleRedis", "singleRedis");
+            jedis.set("guoqi_mutex", "value", "nx", "ex", 180);
             System.out.println(jedis.get("hello_singleRedis"));
 
 
